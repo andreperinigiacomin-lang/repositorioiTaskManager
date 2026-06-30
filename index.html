@@ -32,20 +32,24 @@
         <section class="adicionar-tarefa">
             <div class="interface">
                 <div class="bloco-nova-tarefa">
-                    <h3>
-                        <i class="bi bi-plus-circle"></i>Nova Tarefa</h3>
+                    <form class="bloco-preencher" id="form-tarefa">
+                        <h3>
+                            <i class="bi bi-plus-circle"></i>Nova Tarefa
+                        </h3>
+                        <label for="titulo">Título da tarefa</label>
+                        <input type="text" id="titulo" placeholder="Ex: Estudar TypeScript" required>
+                        
+                        <label for="descricao">Descrição(opcional)</label>
+                        <textarea id="descricao" placeholder="Ex: Revisar conceitos de POO, DOM, e eventos..."></textarea>
+                        <div class="btn-adicionar">
+                            <button id="btn-adicionar">
+                                <i class="bi bi-plus"></i>Adicionar Tarefa
+                            </button>
+                        </div><!--btn-adicionar-->
+                    </form><!--bloco-preencher-->
                     <div class="imagem">
                         <img src="images/imagem-checklist.png" alt="imagem checklist">
                     </div><!--imagem-->
-                    <label for="titulo">Título da tarefa</label>
-                    <input type="text" id="titulo" placeholder="Ex: Estudar TypeScript">
-                    <label for="titulo">Descrição(opcional)</label>
-                    <input type="text" id="titulo" placeholder="Ex: Revisar conceitos de POO, DOM e eventos">
-                    <div class="btn-adicionar">
-                        <button id="btn-adicionar">
-                            <i class="bi bi-plus"></i>Adicionar Tarefa
-                        </button>
-                    </div><!--btn-adicionar-->
                 </div><!--bloco-nova-tarefa-->
             </div><!--interface-->
         </section><!--adicionar-tarefa-->

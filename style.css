@@ -23,6 +23,10 @@ body, input, button, textarea {
 .flex{
     display:flex
 }
+body{
+    background-color: rgb(241, 248, 255);
+}
+
 /*ESTILO GERAL*/
 
 /* ESTILO CABEÇALHO */
@@ -56,5 +60,88 @@ header .flex .logo i{
     font-size: 40px;
 }
 
-
 /*ESTILO CABECALHO*/
+
+/*ESTILO DO BLOCO 1*/
+
+.bloco-nova-tarefa h3{
+    color: #201c27;
+    font-size: 20px;
+}
+.bloco-nova-tarefa h3 i{
+    color: #774cc7;
+    margin-right: 10px;
+    font-weight: 800;
+}
+
+.bloco-nova-tarefa{
+    background-color: #f8fafc;
+    border-radius:  16px;
+    padding: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+    width: 90%;
+    max-width: 1500px;
+    margin: 32px auto;
+    max-height: 700px;
+}
+.bloco-preencher{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.bloco-nova-tarefa label{
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: -8px;
+}
+.bloco-nova-tarefa input, .bloco-nova-tarefa textarea{
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #c6cfdb;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.bloco-nova-tarefa input:focus, .bloco-nova-tarefa textarea:focus{
+    border-color: #4f46e5;
+}
+.bloco-nova-tarefa textarea{
+    height: 100px;
+    resize: none;
+}
+.bloco-nova-tarefa .imagem img{
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+.bloco-nova-tarefa .bloco-preencher button{
+    color: #fff;
+    background-color: #5c31ad;
+    border-radius: 8px;
+    gap: 10px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    border: 1px solid #5c31ad;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.bloco-nova-tarefa .bloco-preencher button i{
+    font-size: 25px;
+    display: flex;
+}
+.bloco-nova-tarefa .bloco-preencher button:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px #5c31ad6e;
+}
+/*ESTILO DO BLOCO 1*/
