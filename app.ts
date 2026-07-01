@@ -20,3 +20,13 @@ function obterHora(): {data: string; hora: string}{
     const hora = agora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit'})
     return {data, hora}
 }
+function renderizarTela(): void{
+    if(!listaTarefas||!contadorTarefas){
+        return;
+    }
+    listaTarefas.innerHTML = '';
+    tarefas.forEach((tarefa, index) => {
+        const tarefaItem = document.createElement('div');
+        tarefaItem.classList.add('tarefa-item');
+    }
+}
