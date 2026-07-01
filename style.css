@@ -74,7 +74,7 @@ header .flex .logo i{
     font-weight: 800;
 }
 
-.bloco-nova-tarefa{
+.bloco-nova-tarefa, .bloco-minhas-tarefas{
     background-color: #f8fafc;
     border-radius:  16px;
     padding: 40px;
@@ -145,3 +145,31 @@ header .flex .logo i{
     box-shadow: 0px 0px 8px #5c31ad6e;
 }
 /*ESTILO DO BLOCO 1*/
+
+/*ESTILO DO BLOCO 2*/
+.cabecalho-das-tasks{
+    color: #201c27;
+    font-size: 20px;
+    margin-left: 15px;
+}
+.bloco-minhas-tarefas span{
+    color: #774cc7;
+    margin-left: 5px;
+    background-color: #774cc734;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+.minhas-tarefas header{
+    background-color: #f8fafc;
+    border-radius:  16px;
+    padding: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+    width: 90%;
+    max-width: 1500px;
+    margin: 32px auto;
+    max-height: 700px;
+}
