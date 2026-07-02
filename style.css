@@ -147,11 +147,11 @@ header .flex .logo i{
 /*ESTILO DO BLOCO 1*/
 
 /*ESTILO DO BLOCO 2*/
-.cabecalho-das-tasks{
+/*.bloco-minhas-tarefa{
     color: #201c27;
-    font-size: 20px;
+    font-size: 40px;
     margin-left: 15px;
-}
+}*/
 .bloco-minhas-tarefas span{
     color: #774cc7;
     margin-left: 5px;
@@ -159,7 +159,7 @@ header .flex .logo i{
     padding: 5px 10px;
     border-radius: 15px;
 }
-.minhas-tarefas header{
+/*.minhas-tarefas header{
     background-color: #f8fafc;
     border-radius:  16px;
     padding: 40px;
@@ -172,7 +172,7 @@ header .flex .logo i{
     max-width: 1500px;
     margin: 32px auto;
     max-height: 700px;
-}
+}*/
 .bloco-minhas-tarefas #filtro{
     padding: 8px 32px 8px 12px;
     font-size: 14px;
@@ -189,4 +189,84 @@ header .flex .logo i{
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 12px;
+}
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto 32px auto;
+}
+.tarefa-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 24px;
+    border: 1px solid #33333344;
+    background-color: transparent;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+.tarefa-item:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-color: #cbd5e1;
+}
+.concluida{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border: 1px solid #33333344;
+    background-color: #70e59b71;
+    border-radius: 10px;
+    justify-content: space-between;
+    text-decoration: line-through;
+}
+.titulo-tarefa{
+    color: #201c27;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.descricao-tarefa{
+    color: #4f4f4f;
+    font-size: 14px;
+}
+.conteudo-tarefa{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+.info-data{
+    font-size: 14px;
+    color: #555;
+}
+.info-hora{
+    font-size: 14px;
+    color: #777;
+}
+.info-hora-tarefa{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:5px;
+    min-width:90px;
+}
+
+.checkbox{
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.botao-excluir{
+    cursor: pointer;
+    border: none;
+    color: #777;
+    font-size: 22px;
+    background: transparent;
+}
+.botao-excluir:hover{
+    color: rgb(106, 0, 0);
 }
