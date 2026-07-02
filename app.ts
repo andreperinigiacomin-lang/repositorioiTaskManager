@@ -51,5 +51,25 @@ class GerenciadorTarefas {
         //this.renderizar();
         this.formTarefa.reset();
 
+        
     }
-}
+    alternarStatusTarefa(index: number): void {
+        if (this.listaDeTarefas[index]) {
+            this.listaDeTarefas[index].concluida = !this.listaDeTarefas[index].concluida;
+            this.renderizar();
+        }
+    }
+    deletarTarefa(index: number): void {
+        this.listaDeTarefas.splice(index, 1);
+        this.renderizar();
+    }
+    renderizar(): void {
+        if (!this.listaTarefasContainer || !this.contadorTarefas) return;
+        this.listaTarefasContainer.innerHTML = '';
+        this.listaDeTarefas.forEach((tarefa, index) => {
+            const card = document.createElement('div');
+            card.classList.add('tarefa-item');
+            if (tarefa.concluida) {
+                card.classList.add('concluida');
+            }
+        }
