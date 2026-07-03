@@ -73,6 +73,7 @@ class GerenciadorTarefas {
             if (tarefa.concluida) {
                 card.classList.add('concluida');
             }
+            //titulo e descricao
             const conteudo = document.createElement('div')
             conteudo.classList.add('conteudo-tarefa')
             const titulo = document.createElement('h4');
@@ -82,6 +83,7 @@ class GerenciadorTarefas {
             descricao.classList.add('descricao-tarefa');
             descricao.textContent = tarefa.descricao;
 
+            //data e hora + icon
             const informacoes = document.createElement('div');
             informacoes.classList.add('info-tarefa');
             const data = document.createElement('div');
@@ -101,6 +103,17 @@ class GerenciadorTarefas {
             txtHora.classList.add('txtHora');
             txtHora.textContent = tarefa.HoraFormatada();
 
+            //botão
+            const btnExcluir = document.createElement('button');
+            btnExcluir.classList.add('botao-excluir');
+            const iconExcluir = document.createElement('i');
+            iconExcluir.classList.add('bi', 'bi-trash3')
+            btnExcluir.addEventListener("click", () => {
+                this.deletarTarefa(index);
+            })
+
+            //append
+            btnExcluir.appendChild(iconExcluir);
             conteudo.appendChild(titulo);
             conteudo.appendChild(descricao);
             card.appendChild(conteudo);
@@ -111,6 +124,10 @@ class GerenciadorTarefas {
             informacoes.appendChild(data);
             informacoes.appendChild(hora);
             card.appendChild(informacoes);
+            card.appendChild(btnExcluir);
+
+
+
             this.listaTarefas.appendChild(card);
         })
     }
