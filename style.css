@@ -147,11 +147,6 @@ header .flex .logo i{
 /*ESTILO DO BLOCO 1*/
 
 /*ESTILO DO BLOCO 2*/
-/*.bloco-minhas-tarefa{
-    color: #201c27;
-    font-size: 40px;
-    margin-left: 15px;
-}*/
 .bloco-minhas-tarefas span{
     color: #774cc7;
     margin-left: 5px;
@@ -159,20 +154,6 @@ header .flex .logo i{
     padding: 5px 10px;
     border-radius: 15px;
 }
-/*.minhas-tarefas header{
-    background-color: #f8fafc;
-    border-radius:  16px;
-    padding: 40px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 60px;
-    align-items: center;
-    width: 90%;
-    max-width: 1500px;
-    margin: 32px auto;
-    max-height: 700px;
-}*/
 .bloco-minhas-tarefas #filtro{
     padding: 8px 32px 8px 12px;
     font-size: 14px;
@@ -195,7 +176,8 @@ header .flex .logo i{
     flex-direction: column;
     gap: 16px;
     width: 90%;
-    max-width: 1500px;
+    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto 32px auto;
 }
 .tarefa-item{
@@ -240,18 +222,27 @@ header .flex .logo i{
 }
 .info-data{
     font-size: 14px;
-    color: #555;
+    color: #777;
 }
 .info-hora{
     font-size: 14px;
-    color: #777;
+    color: #555;
+    margin-right: 53px;
 }
-.info-hora-tarefa{
+.info-tarefa{
     display:flex;
     flex-direction:column;
     align-items:flex-end;
     gap:5px;
     min-width:90px;
+}
+.info-data, .info-hora{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.bi-calendar-event{
+    color: #555;
 }
 
 .checkbox{
