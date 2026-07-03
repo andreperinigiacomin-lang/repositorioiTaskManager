@@ -81,9 +81,36 @@ class GerenciadorTarefas {
             const descricao= document.createElement('p');
             descricao.classList.add('descricao-tarefa');
             descricao.textContent = tarefa.descricao;
+
+            const informacoes = document.createElement('div');
+            informacoes.classList.add('info-tarefa');
+            const data = document.createElement('div');
+            data.classList.add('info-data');
+            const hora = document.createElement('div')
+            hora.classList.add('info-hora');
+            const iconData = document.createElement('i');
+            iconData.classList.add('bi', 'bi-calendar-event')
+            const iconHora = document.createElement('i')
+            iconHora.classList.add('bi', 'bi-clock')
+
+            const txtData = document.createElement('p');
+            txtData.classList.add('txtData');
+            txtData.textContent = tarefa.DataFormatada();
+            
+            const txtHora = document.createElement('p');
+            txtHora.classList.add('txtHora');
+            txtHora.textContent = tarefa.HoraFormatada();
+
             conteudo.appendChild(titulo);
             conteudo.appendChild(descricao);
             card.appendChild(conteudo);
+            data.appendChild(iconData);
+            data.appendChild(txtData);
+            hora.appendChild(iconHora);
+            hora.appendChild(txtHora);
+            informacoes.appendChild(data);
+            informacoes.appendChild(hora);
+            card.appendChild(informacoes);
             this.listaTarefas.appendChild(card);
         })
     }
