@@ -12,10 +12,10 @@ class Tarefa {
         this.dataCriacao = new Date();
     }
     DataFormatada(): string{
-        return this.dataCriacao.toLocaleDateString('pt-BR');
+        return this.dataCriacao.toLocaleDateString('pt-BR'); //DD/MM/AAAA
     }
     HoraFormatada(): string{
-        return this.dataCriacao.toLocaleTimeString('pt-BR',{ hour: '2-digit', minute: '2-digit'})
+        return this.dataCriacao.toLocaleTimeString('pt-BR',{ hour: '2-digit', minute: '2-digit'}) //HH:MM
     }
 }
 class GerenciadorTarefas {
@@ -48,7 +48,7 @@ class GerenciadorTarefas {
         }
         const novaTarefa = new Tarefa(tituloDigitado, descricaoDigitada);
         this.listaDeTarefas.push(novaTarefa);
-        //this.renderizar();
+        this.renderizar();
         this.formTarefa.reset();
 
         
@@ -64,12 +64,28 @@ class GerenciadorTarefas {
         this.renderizar();
     }
     renderizar(): void {
-        if (!this.listaTarefasContainer || !this.contadorTarefas) return;
-        this.listaTarefasContainer.innerHTML = '';
+        if (!this.listaTarefas || !this.contadorTarefas) 
+            return;
+        this.listaTarefas.innerHTML = '';
         this.listaDeTarefas.forEach((tarefa, index) => {
             const card = document.createElement('div');
             card.classList.add('tarefa-item');
             if (tarefa.concluida) {
                 card.classList.add('concluida');
             }
-        }
+            const conteudo = document.createElement('div')
+            conteudo.classList.add('conteudo-tarefa')
+            const titulo = document.createElement('h4');
+            titulo.classList.add('titulo-tarefa');
+            titulo.textContent = tarefa.titulo;
+            const descricao= document.createElement('p');
+            descricao.classList.add('descricao-tarefa');
+            descricao.textContent = tarefa.descricao;
+            conteudo.appendChild(titulo);
+            conteudo.appendChild(descricao);
+            card.appendChild(conteudo);
+            this.listaTarefas.appendChild(card);
+        })
+    }
+}
+      new GerenciadorTarefas();  

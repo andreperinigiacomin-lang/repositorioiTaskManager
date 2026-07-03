@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <!--GOOGLE FONTS-->
     <!--TYPESCRIPT-->
-    <script src="app.js" defer></script>
+    <script type="module" src="app.js" defer></script>
     <!--TYPESCRIPT-->
 </head>
 <body>
@@ -45,7 +45,7 @@
                         <label for="descricao">Descrição(opcional)</label>
                         <textarea id="descricao" placeholder="Ex: Revisar conceitos de POO, DOM, e eventos..."></textarea>
                         <div class="btn-adicionar">
-                            <button id="btn-adicionar">
+                            <button type="submit" id="btn-adicionar">
                                 <i class="bi bi-plus"></i>Adicionar Tarefa
                             </button>
                         </div><!--btn-adicionar-->
@@ -68,10 +68,10 @@
                             <option value="pending">Pendentes</option>
                         </select>
                     </div><!--filtro-->
+                    <div class="lista-tarefas" id="lista-tarefas"></div>
+                </section><!--adicionar-tarefa-->
                 </div><!--bloco-minhas-tarefas-->
-                <div class="lista-tarefas" id="lista-tarefas"></div>
             </div><!--interface-->
-        </section><!--adicionar-tarefa-->
     </main>
 </body>
 </html>
