@@ -111,12 +111,22 @@ class GerenciadorTarefas {
             btnExcluir.addEventListener("click", () => {
                 this.deletarTarefa(index);
             })
+            
+            //checkbox
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.classList.add('checkbox');
+            checkbox.addEventListener('click', () => {
+                this.alternarStatusTarefa(index);
+            })
+
 
             //append
-            btnExcluir.appendChild(iconExcluir);
+            card.appendChild(checkbox)
             conteudo.appendChild(titulo);
             conteudo.appendChild(descricao);
             card.appendChild(conteudo);
+
             data.appendChild(iconData);
             data.appendChild(txtData);
             hora.appendChild(iconHora);
@@ -124,6 +134,8 @@ class GerenciadorTarefas {
             informacoes.appendChild(data);
             informacoes.appendChild(hora);
             card.appendChild(informacoes);
+
+            btnExcluir.appendChild(iconExcluir);
             card.appendChild(btnExcluir);
 
 
