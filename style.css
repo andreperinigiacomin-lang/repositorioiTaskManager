@@ -178,32 +178,30 @@ header .flex .logo i{
     width: 90%;
     max-width: 1200px;
     width: 1200px;
+
     margin: 0 auto 32px auto;
 }
-.tarefa-item{
+.tarefa-item, .concluida{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
     padding: 16px 24px;
     border: 1px solid #33333344;
     background-color: transparent;
     border-radius: 10px;
     justify-content: space-between;
+    transition: all 0.2s;
 }
 .tarefa-item:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   border-color: #cbd5e1;
 }
 .concluida{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px 24px;
-    border: 1px solid #33333344;
-    background-color: #70e59b71;
-    border-radius: 10px;
-    justify-content: space-between;
+    background-color: #70e59b30;
     text-decoration: line-through;
+}
+.concluida:hover{
+        box-shadow: 0px 0px 10px 0px #70e59b6b;
 }
 .titulo-tarefa{
     color: #201c27;
@@ -218,6 +216,7 @@ header .flex .logo i{
 .conteudo-tarefa{
     display:flex;
     flex-direction:column;
+
     gap:6px;
 }
 .info-data{
@@ -249,6 +248,9 @@ header .flex .logo i{
     cursor: pointer;
     height: 20px;
     width: 20px;
+    border: 1px solid #201c27;
+    border-radius: 5px;
+    justify-content: center;
 }
 
 .botao-excluir{
@@ -257,7 +259,11 @@ header .flex .logo i{
     color: #777;
     font-size: 22px;
     background: transparent;
+    transition: transform 0.2s ease;
 }
+
 .botao-excluir:hover{
-    color: rgb(106, 0, 0);
+    transform: scale(1.05);
+    color: rgb(182, 0, 0);
+    box-shadow: 0px 0px 8px 0px  #9700003d;
 }
