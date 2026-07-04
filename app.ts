@@ -28,6 +28,7 @@ class GerenciadorTarefas {
 
     constructor(){
         this.inicializarEventos();
+        this.renderizar();
     }
     inicializarEventos(): void{
         if(this.formTarefa){
@@ -120,12 +121,23 @@ class GerenciadorTarefas {
                 this.alternarStatusTarefa(index);
             })
 
-
+            //circulo
+            const circulo = document.createElement('i');
+            circulo.classList.add('bi', 'bi-circle-fill');
+            circulo.style.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            
+            //lados
+            const ladoEsquerdo = document.createElement('div');
+            ladoEsquerdo.classList.add('bloco-esquerdo')
+            const ladoDireito = document.createElement('div');
+            ladoDireito.classList.add('bloco-direito')
+            
             //append
-            card.appendChild(checkbox)
+            ladoEsquerdo.appendChild(checkbox);
+            ladoEsquerdo.appendChild(circulo);
             conteudo.appendChild(titulo);
             conteudo.appendChild(descricao);
-            card.appendChild(conteudo);
+            ladoEsquerdo.appendChild(conteudo);
 
             data.appendChild(iconData);
             data.appendChild(txtData);
@@ -133,15 +145,17 @@ class GerenciadorTarefas {
             hora.appendChild(txtHora);
             informacoes.appendChild(data);
             informacoes.appendChild(hora);
-            card.appendChild(informacoes);
+            ladoDireito.appendChild(informacoes);
 
             btnExcluir.appendChild(iconExcluir);
-            card.appendChild(btnExcluir);
+            ladoDireito.appendChild(btnExcluir);
 
-
+            card.appendChild(ladoEsquerdo)
+            card.appendChild(ladoDireito)
 
             this.listaTarefas.appendChild(card);
-        })
+        });
+        this.contadorTarefas.textContent = this.listaDeTarefas.length.toString();
     }
 }
       new GerenciadorTarefas();  
