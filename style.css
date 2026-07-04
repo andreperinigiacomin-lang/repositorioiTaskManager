@@ -234,6 +234,7 @@ header .flex .logo i{
     align-items:flex-end;
     gap:5px;
     min-width:90px;
+    margin-right: 20px;
 }
 .info-data, .info-hora{
     display: flex;
@@ -266,4 +267,15 @@ header .flex .logo i{
     transform: scale(1.05);
     color: rgb(182, 0, 0);
     box-shadow: 0px 0px 8px 0px  #9700003d;
+}
+.bloco-esquerdo{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.bloco-direito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }
