@@ -15,9 +15,7 @@ class Tarefa {
     }
     gerarCorAleatoria(): string {
         const cores = ["#EF4444","#F97316","#EAB308","#22C55E","#3B82F6","#8B5CF6","#EC4899","#14B8A6"];
-
         const indice = Math.floor(Math.random() * cores.length);
-
         return cores[indice];
     }
     DataFormatada(): string{
@@ -36,8 +34,29 @@ class GerenciadorTarefas {
     contadorTarefas = document.getElementById('contador-tarefas') as HTMLSpanElement;
 
     constructor(){
+        this.carregarTarefas();
         this.inicializarEventos();
         this.renderizar();
+    }
+    salvarTarefas(): void {
+    localStorage.setItem(
+        "tarefas",
+        JSON.stringify(this.listaDeTarefas)
+    );
+    }
+    carregarTarefas(): void {
+        const tarefasSalvas = localStorage.getItem("tarefas");
+        if (!tarefasSalvas) {
+            return;
+        }
+        const tarefas: Tarefa[] = JSON.parse(tarefasSalvas);
+         this.listaDeTarefas = tarefas.map((objeto: any) => {
+        const tarefa = new Tarefa(objeto.titulo, objeto.descricao);
+        tarefa.concluida = objeto.concluida;
+        tarefa.cor = objeto.cor;
+        tarefa.dataCriacao = new Date(objeto.dataCriacao);
+        return tarefa;
+    });
     }
     inicializarEventos(): void{
         if(this.formTarefa){
@@ -58,19 +77,20 @@ class GerenciadorTarefas {
         }
         const novaTarefa = new Tarefa(tituloDigitado, descricaoDigitada);
         this.listaDeTarefas.push(novaTarefa);
+        this.salvarTarefas();
         this.renderizar();
         this.formTarefa.reset();
-
-        
     }
     alternarStatusTarefa(index: number): void {
         if (this.listaDeTarefas[index]) {
             this.listaDeTarefas[index].concluida = !this.listaDeTarefas[index].concluida;
+            this.salvarTarefas();
             this.renderizar();
         }
     }
     deletarTarefa(index: number): void {
         this.listaDeTarefas.splice(index, 1);
+        this.salvarTarefas();
         this.renderizar();
     }
     renderizar(): void {
