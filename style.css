@@ -193,12 +193,14 @@ header .flex .logo i{
     transition: all 0.2s;
 }
 .tarefa-item:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border-color: #cbd5e1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1;
 }
 .concluida{
-    background-color: #70e59b30;
+    box-shadow: -4px 0px 0px #4cc474;
+    background-color: #97eeb730;
     text-decoration: line-through;
+    border: #32393593 ;
 }
 .concluida:hover{
         box-shadow: 0px 0px 10px 0px #70e59b6b;
@@ -249,9 +251,10 @@ header .flex .logo i{
     cursor: pointer;
     height: 20px;
     width: 20px;
-    border: 1px solid #201c27;
-    border-radius: 5px;
+    border: 2px solid #201c27;
+    border-radius: 7px;
     justify-content: center;
+    accent-color: #94dfb2;
 }
 
 .botao-excluir{
