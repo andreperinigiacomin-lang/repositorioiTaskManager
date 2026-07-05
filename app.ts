@@ -32,6 +32,8 @@ class GerenciadorTarefas {
     txtDescricao = document.getElementById('descricao') as HTMLTextAreaElement;
     listaTarefas = document.getElementById('lista-tarefas') as HTMLDivElement;
     contadorTarefas = document.getElementById('contador-tarefas') as HTMLSpanElement;
+    filtroSelect = document.getElementById('filtro') as HTMLSelectElement;
+    filtroAtual: string = 'all';
 
     constructor(){
         this.carregarTarefas();
@@ -65,6 +67,21 @@ class GerenciadorTarefas {
                 this.adicionarNovaTarefa();
             })
         }
+        if(this.filtroSelect){
+            this.filtroSelect.addEventListener('change', () => {
+                this.filtroAtual = this.filtroSelect.value;
+                this.renderizar();
+            })
+        }
+    }
+    tarefaPassaNoFiltro(tarefa: Tarefa): boolean {
+        if (this.filtroAtual === 'done') {
+            return tarefa.concluida;
+        }
+        if (this.filtroAtual === 'pending') {
+            return !tarefa.concluida;
+        }
+        return true;
     }
     adicionarNovaTarefa(): void{
         if(!this.inputTitulo || !this.txtDescricao || !this.formTarefa){
@@ -98,6 +115,9 @@ class GerenciadorTarefas {
             return;
         this.listaTarefas.innerHTML = '';
         this.listaDeTarefas.forEach((tarefa, index) => {
+            if (!this.tarefaPassaNoFiltro(tarefa)) {
+                return;
+            }
             const card = document.createElement('div');
             card.classList.add('tarefa-item');
             if (tarefa.concluida) {
