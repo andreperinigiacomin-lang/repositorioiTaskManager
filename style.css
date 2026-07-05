@@ -154,6 +154,9 @@ header .flex .logo i{
     padding: 5px 10px;
     border-radius: 15px;
 }
+.bloco-minhas-tarefas{
+    position: relative;
+}
 .bloco-minhas-tarefas #filtro{
     padding: 8px 32px 8px 12px;
     font-size: 14px;
@@ -170,6 +173,9 @@ header .flex .logo i{
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 12px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
 }
 .lista-tarefas {
     display: flex;
