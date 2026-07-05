@@ -4,12 +4,21 @@ class Tarefa {
     descricao: string;
     concluida: boolean;
     dataCriacao: Date;
+    cor:string;
 
     constructor(titulo: string, descricao: string) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.concluida = false;
         this.dataCriacao = new Date();
+        this.cor = this.gerarCorAleatoria();
+    }
+    gerarCorAleatoria(): string {
+        const cores = ["#EF4444","#F97316","#EAB308","#22C55E","#3B82F6","#8B5CF6","#EC4899","#14B8A6"];
+
+        const indice = Math.floor(Math.random() * cores.length);
+
+        return cores[indice];
     }
     DataFormatada(): string{
         return this.dataCriacao.toLocaleDateString('pt-BR'); //DD/MM/AAAA
@@ -117,6 +126,7 @@ class GerenciadorTarefas {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.classList.add('checkbox');
+            checkbox.checked = tarefa.concluida
             checkbox.addEventListener('click', () => {
                 this.alternarStatusTarefa(index);
             })
@@ -124,7 +134,8 @@ class GerenciadorTarefas {
             //circulo
             const circulo = document.createElement('i');
             circulo.classList.add('bi', 'bi-circle-fill');
-            circulo.style.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            circulo.style.color = tarefa.cor;
+            //circulo.style.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
             
             //lados
             const ladoEsquerdo = document.createElement('div');
