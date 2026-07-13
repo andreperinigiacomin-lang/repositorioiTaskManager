@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTask Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <!--BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!--BOOTSTRAP ICONS-->
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!--GOOGLE FONTS-->
+    <!--TYPESCRIPT-->
+    <script type="module" src="app.js" defer></script>
+    <!--TYPESCRIPT-->
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="bloco-cabecalho">
+                <div class="flex">    
+                    <div class="logo">
+                        <i class="bi bi-clipboard-check"></i>
+                        <h1>iTask Manager</h1>
+                    </div><!--logo-->
+                </div><!--flex-->
+                    <p>Organize suas tarefas e seja mais produtivo!</p>
+            </div><!--bloco-cabecalho-->
+        </div><!--interface-->
+    </header>
+    <main>
+        <section class="adicionar-tarefa">
+            <div class="interface">
+                <div class="bloco-nova-tarefa">
+                    <form class="bloco-preencher" id="form-tarefa">
+                        <h3>
+                            <i class="bi bi-plus-circle"></i>Nova Tarefa
+                        </h3>
+                        <label for="titulo">Título da tarefa</label>
+                        <input type="text" id="titulo" placeholder="Ex: Estudar TypeScript" required>
+                        
+                        <label for="descricao">Descrição(opcional)</label>
+                        <textarea id="descricao" placeholder="Ex: Revisar conceitos de POO, DOM, e eventos..."></textarea>
+                        <div class="btn-adicionar">
+                            <button type="submit" id="btn-adicionar">
+                                <i class="bi bi-plus"></i>Adicionar Tarefa
+                            </button>
+                        </div><!--btn-adicionar-->
+                    </form><!--bloco-preencher-->
+                    <div class="imagem">
+                        <img src="images/imagem-checklist.png" alt="imagem checklist">
+                    </div><!--imagem-->
+                </div><!--bloco-nova-tarefa-->
+            </div><!--interface-->
+        </section><!--adicionar-tarefa-->
+
+        <section class="minhas-tarefas">
+            <div class="interface">
+                <div class="bloco-minhas-tarefas">
+                    <h3>Minhas Tarefas <span id="contador-tarefas"></span></h3>
+                    <div class="filtro">
+                        <select id="filtro">
+                            <option value="all">Todas</option>
+                            <option value="done">Concluídas</option>
+                            <option value="pending">Pendentes</option>
+                        </select>
+                    </div><!--filtro-->
+                    <div class="lista-tarefas" id="lista-tarefas"></div>
+                </div><!--bloco-minhas-tarefas-->
+            </div><!--interface-->
+        </section><!--adicionar-tarefa-->
+    </main>
+</body>
+</html>

@@ -1,0 +1,290 @@
+
+/*ESTILO GERAL*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.noto-serif{
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+body, input, button, textarea {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.flex{
+    display:flex
+}
+body{
+    background-color: rgb(241, 248, 255);
+}
+
+/*ESTILO GERAL*/
+
+/* ESTILO CABEÇALHO */
+header {
+  padding: 24px 2%;
+  background-color: #2e2a77;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+header .bloco-cabecalho {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+header .flex .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+header .flex .h1{
+    margin: 0;
+    line-height: 1;
+}
+header .flex .logo i{
+    font-size: 40px;
+}
+
+/*ESTILO CABECALHO*/
+
+/*ESTILO DO BLOCO 1*/
+
+.bloco-nova-tarefa h3{
+    color: #201c27;
+    font-size: 20px;
+}
+.bloco-nova-tarefa h3 i{
+    color: #774cc7;
+    margin-right: 10px;
+    font-weight: 800;
+}
+
+.bloco-nova-tarefa, .bloco-minhas-tarefas{
+    background-color: #f8fafc;
+    border-radius:  16px;
+    padding: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+    width: 90%;
+    max-width: 1500px;
+    margin: 32px auto;
+    max-height: 700px;
+}
+.bloco-preencher{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.bloco-nova-tarefa label{
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: -8px;
+}
+.bloco-nova-tarefa input, .bloco-nova-tarefa textarea{
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #c6cfdb;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.bloco-nova-tarefa input:focus, .bloco-nova-tarefa textarea:focus{
+    border-color: #4f46e5;
+}
+.bloco-nova-tarefa textarea{
+    height: 100px;
+    resize: none;
+}
+.bloco-nova-tarefa .imagem img{
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+.bloco-nova-tarefa .bloco-preencher button{
+    color: #fff;
+    background-color: #5c31ad;
+    border-radius: 8px;
+    gap: 10px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    border: 1px solid #5c31ad;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.bloco-nova-tarefa .bloco-preencher button i{
+    font-size: 25px;
+    display: flex;
+}
+.bloco-nova-tarefa .bloco-preencher button:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px #5c31ad6e;
+}
+/*ESTILO DO BLOCO 1*/
+
+/*ESTILO DO BLOCO 2*/
+.bloco-minhas-tarefas span{
+    color: #774cc7;
+    margin-left: 5px;
+    background-color: #774cc734;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+.bloco-minhas-tarefas{
+    position: relative;
+}
+.bloco-minhas-tarefas #filtro{
+    padding: 8px 32px 8px 12px;
+    font-size: 14px;
+    color: #333;
+    background-color: transparent;
+    border: 1px solid #33333344;
+    border-radius: 10px;
+    cursor: pointer;
+    width: auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+.lista-tarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 90%;
+    max-width: 1200px;
+    width: 1200px;
+
+    margin: 0 auto 32px auto;
+}
+.tarefa-item, .concluida{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border: 1px solid #33333344;
+    background-color: transparent;
+    border-radius: 10px;
+    justify-content: space-between;
+    transition: all 0.2s;
+}
+.tarefa-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1;
+}
+.concluida{
+    box-shadow: -4px 0px 0px #4cc474;
+    background-color: #97eeb730;
+    text-decoration: line-through;
+    border: #32393593 ;
+}
+.concluida:hover{
+        box-shadow: 0px 0px 10px 0px #70e59b6b;
+}
+.titulo-tarefa{
+    color: #201c27;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.descricao-tarefa{
+    color: #4f4f4f;
+    font-size: 14px;
+}
+.conteudo-tarefa{
+    display:flex;
+    flex-direction:column;
+
+    gap:6px;
+}
+.info-data{
+    font-size: 14px;
+    color: #777;
+}
+.info-hora{
+    font-size: 14px;
+    color: #555;
+    margin-right: 50px;
+}
+.info-tarefa{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:5px;
+    min-width:90px;
+    margin-right: 20px;
+}
+.info-data, .info-hora{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.bi-calendar-event{
+    color: #555;
+}
+
+.checkbox{
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #201c27;
+    border-radius: 7px;
+    justify-content: center;
+    accent-color: #94dfb2;
+}
+
+.botao-excluir{
+    cursor: pointer;
+    border: none;
+    color: #777;
+    font-size: 22px;
+    background: transparent;
+    transition: transform 0.2s ease;
+}
+
+.botao-excluir:hover{
+    transform: scale(1.05);
+    color: rgb(182, 0, 0);
+    box-shadow: 0px 0px 8px 0px  #9700003d;
+}
+.bloco-esquerdo{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.bloco-direito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
